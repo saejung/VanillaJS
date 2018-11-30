@@ -11,6 +11,7 @@ h1{
     color:#34495e;
     transition: color .5s ease-in-out;
     font-size: 10em;
+    margin-bottom: 40px;
 }
 
 .clicked{
@@ -19,8 +20,21 @@ h1{
 
 .form, .greetings{
     display: none;
+    color: #70a1ff;
+}
+
+.greetings{
+    margin:0;
+    font-size: 3em;
 }
 
 .showing{
     display: block;
+}
+
+.formInput{
+    width : 15%;
+    padding : 5px;
+    font-size : 20px;
+    text-align: center;
 }
