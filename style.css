@@ -1,6 +1,10 @@
 body{
-    background-color: #ecf0f1;
+    background-color: #BDB9EC;
     text-align: center;
+}
+
+ul{
+    list-style: none;
 }
 
 .btn{
@@ -8,10 +12,34 @@ body{
 }
 
 h1{
-    color:#34495e;
+    color:#fff;
     transition: color .5s ease-in-out;
     font-size: 10em;
+    margin:0;
     margin-bottom: 40px;
+}
+
+button{
+    background-color: transparent;
+    border: none;
+    color: white;
+    padding: 2px 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 5px;
+    cursor: pointer;
+}
+
+a{
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+.wrap{
+    margin-top:130px;
 }
 
 .clicked{
@@ -20,12 +48,13 @@ h1{
 
 .form, .greetings{
     display: none;
-    color: #70a1ff;
+    color: #fff;
 }
 
 .greetings{
     margin:0;
     font-size: 3em;
+    margin-bottom: 40px;
 }
 
 .showing{
@@ -38,3 +67,9 @@ h1{
     font-size : 20px;
     text-align: center;
 }
+
+.link{
+    margin-top: 40px;
+}
+
+
