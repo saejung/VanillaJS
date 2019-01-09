@@ -5,7 +5,26 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
     const TODOS_LS = 'toDos';
 
-    const toDos = [];
+    let toDos = [];
+
+    //8)
+    /* function filterFn(toDo){
+        return toDo.id === 1;
+    } */
+
+    //7)
+    function deleteToDo(event){
+        const btn = event.target;
+        const li = btn.parentNode;
+        toDoList.removeChild(li);
+        const cleanToDos = toDos.filter(function(toDo){
+            //console.log(toDo.id, parseInt(li.id));
+            return toDo.id !== parseInt(li.id);
+        });
+        toDos = cleanToDos;
+        saveToDos();
+        //console.log(cleanToDos);
+    }
 
     //6)
     function saveToDos(){
@@ -18,7 +37,9 @@ const toDoForm = document.querySelector(".js-toDoForm"),
         const delbtn = document.createElement("button");
         const span = document.createElement("span");
         const newId = toDos.length + 1;
+        
         delbtn.innerText = "X";
+        delbtn.addEventListener("click", deleteToDo);
         span.innerText = text;
         li.appendChild(span);
         li.appendChild(delbtn);
@@ -37,8 +58,12 @@ const toDoForm = document.querySelector(".js-toDoForm"),
         //현재 이벤트의 기본 동작을 중단한다.
         event.preventDefault();
         const currentValue = toDoInput.value;
-        paintToDos(currentValue);
-        toDoInput.value = "";
+        if(currentValue !== ""){
+            paintToDos(currentValue);
+            toDoInput.value = "";
+        }else{
+            alert("할일을 입력해주세요");
+        }
     }
 
     //2)
