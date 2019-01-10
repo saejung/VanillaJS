@@ -7,10 +7,11 @@ const toDoForm = document.querySelector(".js-toDoForm"),
 
     let toDos = [];
 
-    //8)
-    /* function filterFn(toDo){
-        return toDo.id === 1;
-    } */
+    function okToDo(event){
+        const btn = this.parentNode;
+        btn.classList.toggle("ok-deco");
+        //console.log(btn);
+    }
 
     //7)
     function deleteToDo(event){
@@ -37,12 +38,16 @@ const toDoForm = document.querySelector(".js-toDoForm"),
         const delbtn = document.createElement("button");
         const span = document.createElement("span");
         const newId = toDos.length + 1;
-        
+        const okbtn = document.createElement("button");
+
         delbtn.innerText = "X";
         delbtn.addEventListener("click", deleteToDo);
+        okbtn.innerText = "V";
+        okbtn.addEventListener("click", okToDo);
         span.innerText = text;
         li.appendChild(span);
         li.appendChild(delbtn);
+        li.appendChild(okbtn);
         li.id = newId;
         toDoList.appendChild(li);
         const toDoObj = {
